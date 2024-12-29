@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header id="header"></header>
+    <div id="container">
+        <nav id="nav">
+            <button type="button" id="priceBtn"><i class="fa-solid fa-bell"></i> Price alerts</button>
+            <div id="topNav">
+                <h3>Stops<i class="fa-solid fa-angle-down" id="arrowIcon" onclick="showStops()"></i></h3>
+            </div>
+            <div>
+                <div class="stopOptions">
+                    <input type="checkbox" name="direct" id="direct" class="checkBoxes">
+                    <label for="direct" class="stopLabel">Direct</label>
+                </div>
+                <div class="stopOptions">
+                    <input type="checkbox" name="direct" id="oneStop" class="checkBoxes">
+                    <label for="oneStop" class="stopLabel">One stop</label>
+                </div>
+                <div class="stopOptions">
+                    <input type="checkbox" name="direct" id="multipleStops" class="checkBoxes">
+                    <label for="multipleStops" class="stopLabel">More than 1 stop</label>
+                </div>
+            </div><br>
+            <hr>
+            <div id="deptTime">
+                <h3>Departure times <i class="fa-solid fa-angle-down" id="arrowIcon2" onclick="showStops()"></i></h3>
+            </div>
+            <div>
+                <div id="depart">
+                    <span>Depart</span>
+                    <span>00:00 - 23:59</span>
+                    <input type="range" oninput="displayTime()" id="range" min="0" max="100">
+                </div>
+                <br>
+                <div id="return">
+                    <span>Return</span>
+                    <span>00:00 - 23:59</span>
+                    <input type="range" oninput="displayTime()" id="range" min="0" max="100">
+                </div>
+                <br>
+                <hr>
+                <div id="priceRange">
+                    <h3>Price</h3><i class="fa-solid fa-angle-down" id="arrowIcon3" onclick="showStops()"></i></h3>
+                </div>
+                <div id="Price">
+                    <span>EGP6,156 - EGP12,393</span>
+                    <input type="range" oninput="displayPrice()" id="range" min="6150" max="12393">
+                </div>
+                <br>
+                <hr>
+                <div id="airlines">
+                    <h3>Airlines</h3><i class="fa-solid fa-angle-down" id="arrowIcon4" onclick="showStops()"></i></h3>
+                </div>
+                <div>
+                    <div>
+                        <button onclick="selectAll()" class="airlineSelect" id="selectAll">Select all</button>
+                        <button onclick="clearAll()" class="airlineSelect" id="ClearAll">Clear all</button>
+                    </div>
+                    <div class="airlineOptions">
+                        <input type="checkbox" name="american" id="american" class="checkBoxes">
+                        <label for="american" class="stopLabel">American Airlines</label>
+                    </div>
+                    <div class="airlineOptions">
+                        <input type="checkbox" name="france" id="france" class="checkBoxes">
+                        <label for="france" class="stopLabel">Air France</label>
+                    </div>
+                    <div class="airlineOptions">
+                        <input type="checkbox" name="canada" id="canada" class="checkBoxes">
+                        <label for="canada" class="stopLabel">Air Canada</label>
+                    </div>
+                </div>
+                <br>
+                <hr>
+            </div>
+        </nav>
+        <main id="main">
+            <div id="topMain">
+                <div><span id="searchResults">1113 results</span></div>
+                <div id="sortDiv">
+                    <label for="sortOptions" id="sortLabel">Sort by</label>
+                    <select id="sortOptions">
+                        <option>Cheapest first</option>
+                        <option>Fastest first</option>
+                        <option>Best</option>
+                    </select>
+                </div>
+            </div>
+            <div id="resultsDiv">
+                <div id="firstResult">
+                    <div id="airlineInfo">
+                        <div class="airlineLogo">
+                            <img src="https://s3-eu-west-1.amazonaws.com/sponsored-portal-uploads-prod/content%2F59fc2d71eb9f40813ba7ea9443e4bd00.png?publicName=ai-template-air-france-full-2-xxxhdpi.png"
+                                class="imgFrance">
+                        </div>
+                        <span class="airlineName">Travel to Los Angeles with Air France</span>
+                    </div>
+                    <div id="flightInfo">
+                        <div class="flightDetails">
+                            <div id="departDetails">
+                                <span id="departTime">03:30</span><br>
+                                <span id="departLocation"> CAI</span>
+                            </div>
+                            <div>
+                                <div id="horzLine">
+                                </div>
+                                <i class="fa-solid fa-plane" id="planeLogo"></i>
+                            </div>
+                            <div id="DestDetails">
+                                <span id="landTime">11:30</span><br>
+                                <span id="landLocation"> LAX</span>
+                            </div>
+
+                            <div id="departDetails2">
+                                <span id="departTime2">03:30</span><br>
+                                <span id="departLocation2"> LAX</span>
+                            </div>
+                            <div>
+                                <div id="horzLine2">
+                                </div>
+                                <i class="fa-solid fa-plane" id="planeLogo2"></i>
+                            </div>
+                            <div id="DestDetails2">
+                                <span id="landTime2">11:30</span><br>
+                                <span id="landLocation2"> CAI</span>
+                            </div>
+                        </div>
+                        <div class="flightprice">
+                            <span class="price">1,067 €</span><br><br>
+                            <button class="selectButton">Select <i class="fa-solid fa-arrow-right" id="selectArrow"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="resultsDiv">
+                <div id="firstResult">
+                    <div id="airlineInfo">
+                        <div class="airlineLogo">
+                            <img src="Delta_Air_Lines-Logo.wine.svg"
+                                class="imgFrance">
+                        </div>
+                        <span class="airlineName">Travel to Los Angeles with Air France</span>
+                    </div>
+                    <div id="flightInfo">
+                        <div class="flightDetails">
+                            <div id="departDetails">
+                                <span id="departTime">03:30</span><br>
+                                <span id="departLocation"> CAI</span>
+                            </div>
+                            <div>
+                                <div id="horzLine">
+                                </div>
+                                <i class="fa-solid fa-plane" id="planeLogo"></i>
+                            </div>
+                            <div id="DestDetails">
+                                <span id="landTime">11:30</span><br>
+                                <span id="landLocation"> LAX</span>
+                            </div>
+
+                            <div id="departDetails2">
+                                <span id="departTime2">03:30</span><br>
+                                <span id="departLocation2"> LAX</span>
+                            </div>
+                            <div>
+                                <div id="horzLine2">
+                                </div>
+                                <i class="fa-solid fa-plane" id="planeLogo2"></i>
+                            </div>
+                            <div id="DestDetails2">
+                                <span id="landTime2">11:30</span><br>
+                                <span id="landLocation2"> CAI</span>
+                            </div>
+                        </div>
+                        <div class="flightprice">
+                            <span class="price">1,067 €</span><br><br>
+                            <button class="selectButton">Select <i class="fa-solid fa-arrow-right" id="selectArrow"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+
+        <aside id="aside"></aside>
+    </div>
+    <footer></footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
