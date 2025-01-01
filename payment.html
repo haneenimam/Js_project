@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Payment</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+
+<body>
+    <div id="container">
+        <h2>Confirm Payment</h2>
+        <div id="flightDetails">
+        </div>
+        <form id="paymentForm">
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Expiry Date</label>
+                <input type="text" id="expiryDate" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="123" required>
+            </div>
+            <div class="form-group">
+                <label for="nameOnCard">Name on Card</label>
+                <input type="text" id="nameOnCard" placeholder="Enter name on card" required>
+            </div>
+            <button type="submit" id="confirmPaymentBtn">Confirm Payment</button>
+        </form>
+    </div>
+    <footer class="footer">
+        <div class="footer-section">
+            <h4>Help</h4>
+            <ul>
+                <li><a href="#">Privacy Settings</a></li>
+                <li><a href="#">Log in</a></li>
+                <li><a href="#">Cookie policy</a></li>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Terms of service</a></li>
+                <li><a href="#">Company Details</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Explore</h4>
+            <ul>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Trips</a></li>
+                <li><a href="#">International Sites</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy;2024 FLYEE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="payment.js"></script>
+</body>
+
+</html>
