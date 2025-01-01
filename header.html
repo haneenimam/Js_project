@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Quicksand", serif;
+
+        }
+
+        body {
+            font-optical-sizing: auto;
+            font-style: normal;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            /* خلفية فاتحة */
+        }
+
+        .header1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* محاذاة العناصر عموديًا في المنتصف */
+            background-color: #410271;
+            /* خلفية زرقاء */
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+        }
+
+        .header1 h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .header1 p {
+            margin: 0;
+            font-size: 1.2rem;
+            /* حجم خط كلمة Login */
+            margin-right: 10px;
+            /* إضافة مسافة بين "Login" والأيقونة */
+        }
+
+        .header1 i {
+            padding-left: 5px;
+            cursor: pointer;
+            /* لتغيير المؤشر عند التمرير */
+            transition: color 0.3s;
+            /* تأثير لتغيير اللون */
+        }
+
+        .header1 i:hover {
+            color: #ecf0f1;
+            /* تغيير اللون عند التمرير على الأيقونة */
+        }
+
+        .header1 a {
+            font-family: "Quicksand", serif;
+
+            color: white;
+            text-decoration: none;
+        }
+
+        img {
+            padding: 0;
+            height: 40px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header1">
+        <a href="../index.html">
+            <img src="purple.png"> </a>
+        <a href="#" id="openModal">
+            <p>Login<i class="fa-solid fa-user"></i></p>
+        </a>
+    </header>
+
+</body>
+
+</html>
